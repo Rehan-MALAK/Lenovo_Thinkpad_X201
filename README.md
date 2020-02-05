@@ -31,12 +31,14 @@ https://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/6quj19uc.txt
 
 shows that it's the last ever version
 
+```
   Package        BIOS (BIOS ID)  ECP       (ECP ID)             Rev.  Issue Date
   -------------- --------------- -----------------------------  ----  ----------
   1.40-1.15/1.15 1.40 (6QET70WW) 1.15/1.15 (6QHT34WW/6SHT34WW)  01    2013/06/21  
                                            (8VHT34WW)  
+```
 
-Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" !
+Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" ! Instead we will just tell grub where to find memdisk + bios upgrade program. (Don't mixed up with the geteltorino-ed file otherwise you will have a "MEMDISK: image too big to load" or something close)
 
 Just do :
 
