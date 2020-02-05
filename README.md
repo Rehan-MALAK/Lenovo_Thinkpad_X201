@@ -1,4 +1,4 @@
-***All of these below, work for me, but may damage irremediably your computer. Use it at your own risk !***
+***All of these below, worked for me, but may damage irremediably your computer. Use it at your own risk !***
 
 ### Repare Wifi (nothing in ''lspci'' and wifi disappearing randomly)
 
