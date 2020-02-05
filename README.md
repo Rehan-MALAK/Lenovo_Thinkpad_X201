@@ -38,7 +38,11 @@ shows that it's the last ever version
                                            (8VHT34WW)  
 ```
 
-Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" ! Instead we will just tell grub where to find memdisk + bios upgrade program. (Don't mixed up with the geteltorino-ed file otherwise you will have a "MEMDISK: image too big to load" or something close)
+Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" ! 
+
+Don't use the backup the first 100M of the hard disk and create a new partition with memdisk + bios upgrade, it is not needed !
+
+Instead we will just tell grub2 where to find memdisk + bios upgrade program on your current Linux root partition. (Don't mixed up with the geteltorino-ed file otherwise you will have a "MEMDISK: image too big to load" or something close)
 
 Just do :
 
