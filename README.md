@@ -84,3 +84,45 @@ But the
 	3. Update model number
 
 didn't and we don't care !
+
+### Repare Ethernet Intel e1000e(nothing in ''ip link'')
+
+If you have nothing in ''ip link'' and your ''dmesg'' has some
+
+```
+e1000e: probe of 0000:00:19.0 failed with error -3
+```
+
+because of a failure of a hardware reset in the e1000e driver
+
+or 
+
+```
+e1000e 0000:00:19.0: The NVM Checksum Is Not Valid
+e1000e: probe of 0000:00:19.0 failed with error -5
+```
+
+you probably have your NIC in a shitty state.
+
+BIOS update, kernel module arguments, disable BIOS options ... nothing worked
+
+https://askubuntu.com/questions/1158452/e1000e-error-3-and-unclaimed-network-interface
+https://bbs.archlinux.org/viewtopic.php?id=185765
+https://www.whtop.com/blog/e1000e-probe-failed-with-error-2/
+
+I took a radical solution...
+Rebuild e1000e driver and removing (commenting the code) everything that was not working : hw physical reset and NVM checksum...
+
+https://github.com/Rehan-MALAK/e1000e-3.6.0
+
+probably a terrible idea ... but now my NIC works and I'm using it to push this comment on github...
+
+On another level, Intel should probably try to make their Bootutil tool buildable on Debian (and compatible with linux-headers-$(uname -r)-common and linux-headers-$(uname -r)-amd64 and linux-kbuild-5.4)
+
+https://downloadcenter.intel.com/download/29137?v=t
+
+I will try this later.
+
+### The XXI century laptop : coreboot
+
+Some day...
