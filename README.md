@@ -1,6 +1,6 @@
 All of these below, work for me, but may damage irremediably your computer. Use it at your own risk !
 
---Repare Wifi (nothing in ''lspci'' and wifi disappearing randomly)--
+### Repare Wifi (nothing in ''lspci'' and wifi disappearing randomly)
 
 https://bugzilla.kernel.org/show_bug.cgi?id=91171
 
@@ -15,9 +15,13 @@ https://bugzilla.kernel.org/show_bug.cgi?id=91171
 > Dec 02 16:46:29 K kernel: Timeout waiting for hardware access (CSR_GP_CNTRL
 > 0xffffffff)
 
-Open the laptop, clean it, remove Intel Centrino Wireless-N 1000 pci card and put it back
+Open the laptop, clean it, remove Intel Centrino Wireless-N 1000 pci card and put it back.
 
---Upgrade BIOS with a already working Grub2 Linux--
+I know this sounds crazy, but if you have the exact same kernel messages and if you have time to lose, just give it a try !
+
+### Upgrade BIOS with a already working Grub2 Linux
+
+(only if you have a BIOS older than the last upgrade from Lenovo : 1.40-1.15 (2013))
 
 Download the BIOS Update Bootable CD for Windows 8 (32-bit, 64-bit), 7 (32-bit, 64-bit), Vista (32-bit, 64-bit), XP - ThinkPad
 Version : 1.40-1.15
@@ -34,9 +38,10 @@ shows that it's the last ever version
   -------------- --------------- -----------------------------  ----  ----------
   1.40-1.15/1.15 1.40 (6QET70WW) 1.15/1.15 (6QHT34WW/6SHT34WW)  01    2013/06/21  
                                            (8VHT34WW)  
-Don't use the geteltorino method (from the genisoimage Debian package) !
 
-Just do 
+Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" !
+
+Just do :
 
 sudo cp 6quj19us.iso /boot/images/bios.iso
 sudo apt install syslinux-common
@@ -71,4 +76,4 @@ But the
 
 3. Update model number
 
-didn't and I don't care)
+didn't and we don't care !
