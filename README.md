@@ -1,19 +1,16 @@
-All of these below, work for me, but may damage irremediably your computer. Use it at your own risk !
+***All of these below, work for me, but may damage irremediably your computer. Use it at your own risk !***
 
 ### Repare Wifi (nothing in ''lspci'' and wifi disappearing randomly)
 
 https://bugzilla.kernel.org/show_bug.cgi?id=91171
 
-> Dec 02 16:46:29 K kernel: iwlwifi 0000:03:00.0: Error sending REPLY_ADD_STA:
-> time out after 2000ms.
-> Dec 02 16:46:29 K kernel: iwlwifi 0000:03:00.0: Current CMD queue read_ptr
-> 143 write_ptr 144
-> Dec 02 16:46:29 K kernel: ------------[ cut here ]------------
-> Dec 02 16:46:29 K kernel: WARNING: CPU: 3 PID: 14198 at
-> drivers/net/wireless/iwlwifi/pcie/trans.c:1552
-> iwl_trans_pcie_grab_nic_access+0xf2/0x100 [iwlwifi]()
-> Dec 02 16:46:29 K kernel: Timeout waiting for hardware access (CSR_GP_CNTRL
-> 0xffffffff)
+```
+Dec 02 16:46:29 K kernel: iwlwifi 0000:03:00.0: Error sending REPLY_ADD_STA: time out after 2000ms.
+Dec 02 16:46:29 K kernel: iwlwifi 0000:03:00.0: Current CMD queue read_ptr 143 write_ptr 144
+Dec 02 16:46:29 K kernel: ------------[ cut here ]------------
+Dec 02 16:46:29 K kernel: WARNING: CPU: 3 PID: 14198 at drivers/net/wireless/iwlwifi/pcie/trans.c:1552  iwl_trans_pcie_grab_nic_access+0xf2/0x100 [iwlwifi]()
+Dec 02 16:46:29 K kernel: Timeout waiting for hardware access (CSR_GP_CNTRL 0xffffffff)
+```
 
 Open the laptop, clean it, remove Intel Centrino Wireless-N 1000 pci card and put it back.
 
@@ -49,7 +46,7 @@ sudo apt install syslinux-common
 sudo cp /usr/lib/syslinux/memdisk /boot/images/
 ```
 
-Edit ``/etc/grub.d/40_custom`` and put the correct root partition (in Grub2 nomenclature, ie : ``'hd0,msdos3'`` for the linux ``/dev/sda3`` third partition of the first primary hard disk)
+Edit ``/etc/grub.d/40_custom`` and put the correct root partition below (in Grub2 nomenclature, ie : ``'hd0,msdos3'`` for the linux ``/dev/sda3`` third partition of the first primary hard disk)
 
 ```bash
 #!/bin/sh
