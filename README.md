@@ -43,12 +43,15 @@ Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB
 
 Just do :
 
+```bash
 sudo cp 6quj19us.iso /boot/images/bios.iso
 sudo apt install syslinux-common
 sudo cp /usr/lib/syslinux/memdisk /boot/images/
+```
 
-Edit /etc/grub.d/40_custom and put the correct root partition (in Grub2 nomenclature, ie : 'hd0,msdos3' for the linux /dev/sda3 third partition of the first primary hard disk)
+Edit ``/etc/grub.d/40_custom`` and put the correct root partition (in Grub2 nomenclature, ie : ``'hd0,msdos3'`` for the linux ``/dev/sda3`` third partition of the first primary hard disk)
 
+```bash
 #!/bin/sh
 exec tail -n +3 $0
 # This file provides an easy way to add custom menu entries.  Simply type the
@@ -61,19 +64,20 @@ menuentry "BIOS UPDATE" {
 	linux16 /boot/images/memdisk.iso iso raw
 	initrd16 /boot/images/bios.iso
 }
+```
 
-sudo update-grub2
+``sudo update-grub2``
 
 and reboot on the "BIOS UPDATE" choice in Grub2 Menu
 
 (the Bios Upgrade Menu :
 
-2.Update system program
+	2.Update system program
 
 works
 
 But the
 
-3. Update model number
+	3. Update model number
 
 didn't and we don't care !
