@@ -14,7 +14,7 @@ Dec 02 16:46:29 K kernel: Timeout waiting for hardware access (CSR_GP_CNTRL 0xff
 
 Open the laptop, clean it, remove Intel Centrino Wireless-N 1000 pci card and put it back.
 
-I know this sounds crazy, but if you have the exact same kernel messages and if you have time to lose, just give it a try !
+I know this sounds crazy, but if you have the exact same kernel messages and if you have time to lose, just give it a try and you will see in Linux bugzilla that I'm not the only one !
 
 ### Upgrade BIOS with a already working Grub2 Linux
 
