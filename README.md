@@ -34,13 +34,13 @@ shows that it's the last ever version
 ```
   Package        BIOS (BIOS ID)  ECP       (ECP ID)             Rev.  Issue Date
   -------------- --------------- -----------------------------  ----  ----------
-  1.40-1.15/1.15 1.40 (6QET70WW) 1.15/1.15 (6QHT34WW/6SHT34WW)  01    2013/06/21  
-                                           (8VHT34WW)  
+  1.40-1.15/1.15 1.40 (6QET70WW) 1.15/1.15 (6QHT34WW/6SHT34WW)  01    2013/06/21
+                                           (8VHT34WW)
 ```
+Two methods that did not work or too complicated :
 
-Don't use the geteltorino (genisoimage Debian package) method + F12 (boot on USB key) otherwise you will just have a "Missing operating system" ! 
-
-Don't use the backup the first 100M of the hard disk and create a new partition with memdisk + bios upgrade, it is not needed !
+  - the "geteltorino (genisoimage Debian package) + F12 (boot on USB key)" method  => "Missing operating system" !
+  - the "backup + new partition at the beginning of the hard disk method  with memdisk + bios upgrade" method => not needed !
 
 Instead we will just tell grub2 where to find memdisk + bios upgrade program on your current Linux root partition. (Don't mixed up with the geteltorino-ed file otherwise you will have a "MEMDISK: image too big to load" or something close)
 
@@ -95,7 +95,7 @@ e1000e: probe of 0000:00:19.0 failed with error -3
 
 because of a failure of a hardware reset in the e1000e driver
 
-or 
+or
 
 ```
 e1000e 0000:00:19.0: The NVM Checksum Is Not Valid
