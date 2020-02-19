@@ -113,6 +113,13 @@ https://www.whtop.com/blog/e1000e-probe-failed-with-error-2/
 I took a radical solution...
 Rebuild e1000e driver and removing (commenting the code) everything that was not working : hw physical reset and NVM checksum...
 
+and of course don't forget to update the initramfs
+
+```bash
+sudo cp e1000e.ko /lib/modules/5.4.0-4-amd64/kernel/drivers/net/ethernet/intel/e1000e/
+sudo update-initramfs -k $(uname -r) -u -v
+```
+
 https://github.com/Rehan-MALAK/e1000e-3.6.0
 
 probably a terrible idea ... but now my NIC works and I'm using it to push this comment on github...
